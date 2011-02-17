@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @subject_area.title
+%p
+  %b Filename:
+  = @subject_area.filename
+
+= link_to 'Edit', edit_subject_area_path(@subject_area)
+\|
+= link_to 'Back', subject_areas_path

@@ -1,0 +1,24 @@
+%h1 Listing subject_areas
+
+= link_to 'New Subject area', new_subject_area_path
+
+
+%table
+  %tr
+    %th Title
+    %th Filename
+    %th
+    %th
+    %th
+
+  - @subject_areas.each do |subject_area|
+    %tr
+      %td= subject_area.title
+      %td= subject_area.filename
+      %td= link_to 'Show', subject_area
+      %td= link_to 'Edit', edit_subject_area_path(subject_area)
+      %td= link_to 'Destroy', subject_area, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Subject area', new_subject_area_path
