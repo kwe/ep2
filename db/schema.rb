@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217104522) do
+ActiveRecord::Schema.define(:version => 20110217141639) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(:version => 20110217104522) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "prospectus_requests", :force => true do |t|
+    t.boolean  "full"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prospectus_requests_subject_areas", :id => false, :force => true do |t|
+    t.integer "prospectus_request_id"
+    t.integer "subject_area_id"
+  end
 
   create_table "subject_areas", :force => true do |t|
     t.string   "title"

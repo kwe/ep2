@@ -1,0 +1,19 @@
+%h1 Listing prospectus_requests
+
+%table
+  %tr
+    %th Full
+    %th
+    %th
+    %th
+
+  - @prospectus_requests.each do |prospectus_request|
+    %tr
+      %td= prospectus_request.full
+      %td= link_to 'Show', prospectus_request
+      %td= link_to 'Edit', edit_prospectus_request_path(prospectus_request)
+      %td= link_to 'Destroy', prospectus_request, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Prospectus request', new_prospectus_request_path

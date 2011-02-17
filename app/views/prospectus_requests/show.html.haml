@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Full:
+  = @prospectus_request.full
+
+%h3
+  Subject Areas
+%ul
+  - @prospectus_request.subject_areas.each do |s|
+    %li
+      = s.title
+
+= link_to 'Edit', edit_prospectus_request_path(@prospectus_request)
+\|
+= link_to 'Back', prospectus_requests_path

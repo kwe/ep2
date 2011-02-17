@@ -1,4 +1,6 @@
 Ep2::Application.routes.draw do
+  resources :prospectus_requests
+
   resources :subject_areas
 
   # The priority is based upon order of creation:
